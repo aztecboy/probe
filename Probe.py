@@ -2,8 +2,7 @@
 import socket
 import urllib.request
 def probe():
-  print("pls typ the url you want to 
-    probe")
+  print("pls typ the url you want to probe")
   print("ex: www.google.com")
   url1 = input("~:")
   url2 = "https://" + url1
@@ -19,8 +18,14 @@ def probe():
   print("do you want to see the html?")
   option = input("/:")
   if option == "yes":
-    print(red.decode("utf-8"))
-    print("closing")
+    try:
+        print(red.decode("utf-8"))
+        print("closing")
+    except:
+      print("failure printing decoded html, printing undecoded")
+      print(red)
+      print("closing")
+    
   else:
     print("ok")
   
